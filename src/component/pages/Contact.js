@@ -3,7 +3,6 @@ import React from 'react'
 
 const useStyles = makeStyles((theme) => ({
     root: {
-        margin: 0,
         padding: "5rem",
         width: "100vw",
         height: "100vh"
