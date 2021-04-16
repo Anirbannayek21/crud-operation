@@ -3,7 +3,7 @@ import React from 'react'
 
 const useStyles = makeStyles((theme) => ({
     root: {
-        padding: "5rem",
+        paddingTop: "5rem",
         width: "100vw",
         height: "100vh"
     },
@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
 }))
 function Contact() {
     const classes = useStyles();
-    
+
     return (
         <Container className={classes.root} align="center">
             <Paper component={Box} className={classes.setMobile} p={4} align="left">
