@@ -1,5 +1,5 @@
 import { Fab, makeStyles } from '@material-ui/core';
-import { Route, Switch } from 'react-router';
+import { Route, Switch, useLocation } from 'react-router';
 import './App.css';
 import About from './component/pages/About';
 import Contact from './component/pages/Contact';
@@ -10,6 +10,7 @@ import Adduser from './component/users/Adduser';
 import { NavLink } from 'react-router-dom';
 import Edituser from './component/users/Edituser';
 import Viewuser from './component/users/Viewuser'
+import { useEffect } from 'react';
 
 const useStyles = makeStyles((theme) => ({
   add: {
@@ -22,6 +23,27 @@ const useStyles = makeStyles((theme) => ({
 
 function App() {
   const classes = useStyles();
+  const location = useLocation();
+  console.log(location)
+
+  useEffect(() => {
+    if (location.pathname === "/") {
+      document.title = "Home Page"
+    }
+    else if (location.pathname === "/about") {
+      document.title = "About Page"
+    }
+    else if (location.pathname === "/contact") {
+      document.title = "Contact Page"
+    }
+    else if (location.pathname === "/add") {
+      document.title = "Add User"
+    }
+    else {
+      document.title = "React User"
+    }
+
+  })
   return (
     <>
       <Fab component={NavLink} to="/add" color="primary" className={classes.add} variant="extended">

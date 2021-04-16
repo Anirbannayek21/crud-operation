@@ -17,6 +17,7 @@ const useStyles = makeStyles((theme) => ({
 }))
 function Contact() {
     const classes = useStyles();
+    
     return (
         <Container className={classes.root} align="center">
             <Paper component={Box} className={classes.setMobile} p={4} align="left">
